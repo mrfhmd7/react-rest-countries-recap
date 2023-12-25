@@ -6,20 +6,21 @@ const Countries = () => {
      useEffect(() => {
           fetch('https://restcountries.com/v3.1/all')
                .then(res => res.json())
-          .then(data => setCountries(data))
+               .then(data => setCountries(data))
      }, [])
      return (
           <div>
-               {
-                    countries.map(country =>
-                         // console.log(country)
-                         <Country
-                         key={country.ccn3}
-                         name={country.name.common}
-                         population={country.population}
-                         ></Country>
-                    )
-               }
+               <h1>Welcome to All Country!!</h1>
+               <div className='countries-container'>
+                    {
+                         countries.map(country =>
+                              <Country
+                                   key={country.cca3}
+                                   country={country}
+                              ></Country>
+                         )
+                    }
+               </div>
           </div>
      );
 };
